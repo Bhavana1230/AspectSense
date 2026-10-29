@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AspectSense - Dashboard</title>{% include 'base.css.html' %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script></head><body>
+<header><span class="dot"></span><b>AspectSense</b><span class="sub">Analyst dashboard</span><span class="sp"></span><a href="/">← Back to analyzer</a></header>
+<main>
+ <div class="grid" id="kpis"></div>
+ <div class="two"><div class="card"><h3>Aspect sentiment (all analysed reviews)</h3><canvas id="c1" height="150"></canvas></div>
+  <div class="card"><h3>Overall sentiment</h3><canvas id="c2" height="200"></canvas><h3 style="margin-top:14px">Languages</h3><canvas id="c3" height="140"></canvas></div></div>
+ <div class="card"><h3>Batch analysis - upload CSV (column “text”, max 500 rows)</h3>
+  <div class="row"><input type="file" id="f" accept=".csv,.txt" style="flex:1;min-width:220px">
+  <select id="eng" style="width:auto"><option value="lexicon">Lexicon</option><option value="tfidf">TF-IDF</option><option value="transformer">Transformer</option><option value="hybrid">Hybrid</option></select>
+  <button class="btn pri" id="up">Analyze file</button><button class="btn" id="dl" style="display:none">Download results CSV</button><button class="btn" id="rs">Reset log</button><span class="mut" id="msg"></span></div></div>
+ <div class="card"><h3>Recent reviews</h3><table id="rec"></table></div>
+</main>
+<script>
+var $=function(i){return document.getElementById(i)},charts={},COL={positive:"#2fd0a0",neutral:"#9aa3c4",negative:"#ff6b7a",mixed:"#f5b94a"};
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function mk(id,cfg){if(charts[id])charts[id].destroy();charts[id]=new Chart($(id),cfg)}
+function load(){fetch("/api/stats").then(function(r){return r.json()}).then(function(s){
+ var o=s.overall;$("kpis").innerHTML=[["Reviews analysed",s.total],["Avg. overall score",s.avg_score],
+  ["Positive",o.positive||0],["Negative",o.negative||0],["Mixed",o.mixed||0]].map(function(k){return '<div class="card"><div class="kpi">'+k[1]+'</div><div class="mut">'+k[0]+'</div></div>'}).join("");
+ var asp=Object.keys(s.aspect_matrix),labs=["positive","neutral","negative","mixed"];
+ mk("c1",{type:"bar",data:{labels:asp,datasets:labs.map(function(l){return {label:l,backgroundColor:COL[l],data:asp.map(function(a){return s.aspect_matrix[a][l]||0})}})},
+  options:{scales:{x:{stacked:true,ticks:{color:"#8b92b3"}},y:{stacked:true,ticks:{color:"#8b92b3",precision:0}}},plugins:{legend:{labels:{color:"#e6e9f5"}}}}});
+ var ok=Object.keys(o);mk("c2",{type:"doughnut",data:{labels:ok,datasets:[{data:ok.map(function(k){return o[k]}),backgroundColor:ok.map(function(k){return COL[k]})}]},options:{plugins:{legend:{labels:{color:"#e6e9f5"}}}}});
+ var lk=Object.keys(s.languages);mk("c3",{type:"doughnut",data:{labels:lk,datasets:[{data:lk.map(function(k){return s.languages[k]}),backgroundColor:["#6c8cff","#2fd0a0","#f5b94a","#ff6b7a"]}]},options:{plugins:{legend:{labels:{color:"#e6e9f5"}}}}});
+ $("rec").innerHTML="<tr><th>Review</th><th>Lang</th><th>Overall</th><th>Aspects</th></tr>"+s.recent.map(function(r){
+  return "<tr><td>"+esc(r.text)+"</td><td>"+esc(r.lang)+'</td><td><span class="tag '+r.overall+'">'+r.overall+"</span></td><td class='mut'>"+
+  Object.keys(r.aspects).map(function(a){return a+"="+r.aspects[a]}).join("; ")+"</td></tr>"}).join("")})}
+var lastRows=null;
+$("up").onclick=function(){var f=$("f").files[0];if(!f){$("msg").textContent="Choose a CSV first";return}
+ var fd=new FormData();fd.append("file",f);fd.append("engine",$("eng").value);$("msg").textContent="Analyzing…";
+ fetch("/api/batch",{method:"POST",body:fd}).then(function(r){return r.json()}).then(function(d){
+  if(d.error){$("msg").textContent=d.error;return}lastRows=d.rows;$("dl").style.display="";
+  $("msg").textContent=d.summary.count+" reviews done"+(d.truncated?" (truncated to 500)":"");load()}).catch(function(e){$("msg").textContent=String(e)})};
+$("dl").onclick=function(){var q=function(v){return '"'+String(v).replace(/"/g,'""')+'"'};
+ var csv="text,language,overall,aspects\n"+lastRows.map(function(r){return [r.text,r.language,r.overall,r.aspects].map(q).join(",")}).join("\n");
+ var a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["\ufeff"+csv],{type:"text/csv"}));a.download="aspectsense_results.csv";a.click()};
+$("rs").onclick=function(){fetch("/api/clear",{method:"POST"}).then(load)};
+load();
+</script></body></html>

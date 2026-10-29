@@ -1,0 +1,74 @@
+{
+ "main": {
+  "n": 51,
+  "language_detection_acc": 1.0,
+  "engines": {
+   "lexicon": {
+    "overall_acc": 0.9803921568627451,
+    "overall_macro_f1": 0.9789819376026273,
+    "aspect_P": 1.0,
+    "aspect_R": 1.0,
+    "aspect_F1": 1.0,
+    "aspect_sentiment_acc": 1.0,
+    "per_lang_acc": {
+     "en": 0.9166666666666666,
+     "hinglish": 1.0,
+     "hi": 1.0,
+     "mr": 1.0
+    },
+    "ms_per_review": 0.165477176470212
+   },
+   "tfidf": {
+    "overall_acc": 0.7058823529411765,
+    "overall_macro_f1": 0.6914765276685024,
+    "aspect_P": 0.9852941176470589,
+    "aspect_R": 1.0,
+    "aspect_F1": 0.9925925925925926,
+    "aspect_sentiment_acc": 0.4925373134328358,
+    "per_lang_acc": {
+     "en": 0.5833333333333334,
+     "hinglish": 0.8,
+     "hi": 0.75,
+     "mr": 0.6666666666666666
+    },
+    "ms_per_review": 1.8270287058824435
+   }
+  }
+ },
+ "challenge": {
+  "n": 24,
+  "language_detection_acc": 1.0,
+  "engines": {
+   "lexicon": {
+    "overall_acc": 0.5,
+    "overall_macro_f1": 0.5022556390977444,
+    "aspect_P": 1.0,
+    "aspect_R": 0.6071428571428571,
+    "aspect_F1": 0.7555555555555554,
+    "aspect_sentiment_acc": 0.8235294117647058,
+    "per_lang_acc": {
+     "en": 0.625,
+     "hinglish": 0.3333333333333333,
+     "hi": 0.6,
+     "mr": 0.4
+    },
+    "ms_per_review": 0.17076500000001715
+   },
+   "tfidf": {
+    "overall_acc": 0.5833333333333334,
+    "overall_macro_f1": 0.5889001349527665,
+    "aspect_P": 0.8928571428571429,
+    "aspect_R": 0.8928571428571429,
+    "aspect_F1": 0.8928571428571429,
+    "aspect_sentiment_acc": 0.56,
+    "per_lang_acc": {
+     "en": 0.625,
+     "hinglish": 0.3333333333333333,
+     "hi": 0.6,
+     "mr": 0.8
+    },
+    "ms_per_review": 1.6828591666661434
+   }
+  }
+ }
+}

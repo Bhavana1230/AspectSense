@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AspectSense - Aspect-Based Multilingual Sentiment</title>{% include 'base.css.html' %}</head><body>
+<header><span class="dot"></span><b>AspectSense</b><span class="sub">Aspect-based · Multilingual · Transformer sentiment</span><span class="sp"></span>
+<a href="/dashboard">Dashboard</a></header>
+<main>
+ <div class="card"><h3>Review text (English / Hindi / Marathi / Hinglish)</h3>
+  <textarea id="txt" placeholder="e.g. Khana bahut tasty tha lekin service ekdum bekar thi"></textarea>
+  <div class="row" style="margin-top:10px">
+   <select id="eng" style="width:auto"><option value="lexicon">Engine: Lexicon (fast, offline)</option>
+   <option value="tfidf">Engine: TF-IDF + LogReg</option><option value="transformer">Engine: XLM-R Transformer</option>
+   <option value="hybrid">Engine: Hybrid (XLM-R + lexicon)</option></select>
+   <button class="btn pri" id="go">Analyze</button><button class="btn" id="clr">Clear</button><span class="mut" id="msg"></span></div>
+  <div class="row" id="samples" style="margin-top:10px"></div></div>
+ <div class="two"><div id="out"><div class="card mut">Result appears here. Try a sample chip above.</div></div>
+  <div class="card"><h3>Pipeline trace</h3><div id="trace" class="mut">-</div></div></div>
+</main>
+<script>
+var SAMPLES=["The food was delicious but the service was very slow.",
+"Khana bahut tasty tha lekin service ekdum bekar thi",
+"खाना बहुत स्वादिष्ट था लेकिन सर्विस बहुत धीमी थी",
+"जेवण खूप छान होतं पण सेवा खूप संथ होती",
+"Great battery life and a beautiful display, totally worth the price.",
+"Delivery was late and the packaging was damaged. Very disappointed.",
+"Camera achha hai but battery bakwas hai"];
+var $=function(i){return document.getElementById(i)};
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function bar(sc){var w=Math.min(50,Math.abs(sc)*50),col=sc>=0?"var(--pos)":"var(--neg)";
+ return '<div class="bar"><i style="background:'+col+';width:'+w+'%;left:'+(sc>=0?50:50-w)+'%"></i></div>'}
+SAMPLES.forEach(function(s){var b=document.createElement("span");b.className="chip";b.textContent=s.length>38?s.slice(0,38)+"…":s;
+ b.onclick=function(){$("txt").value=s;run()};$("samples").appendChild(b)});
+fetch("/api/engines").then(function(r){return r.json()}).then(function(d){
+ Array.prototype.forEach.call($("eng").options,function(o){if(!d.engines[o.value]){o.disabled=true;o.text+=" (install torch+transformers)"}});
+ $("eng").value="{{ default_engine }}"});
+function render(r){
+ var h='<div class="card"><h3>Overall</h3><div class="row"><span class="tag '+r.overall.label+'">'+r.overall.label.toUpperCase()+'</span>'+
+  '<span class="mut">score '+r.overall.score+' · language <b>'+esc(r.language.name)+'</b> ('+r.language.script+') · engine '+r.engine+'</span></div>'+bar(r.overall.score)+'</div>';
+ if(r.note)h+='<div class="card mut">'+esc(r.note)+'</div>';
+ h+='<div class="card"><h3>Aspects</h3>';
+ if(!r.aspects.length)h+='<div class="mut">No aspect detected - only overall sentiment available.</div>';
+ else{h+='<div class="grid">';r.aspects.forEach(function(a){
+  h+='<div class="card" style="background:#10142a"><div class="row"><b style="text-transform:capitalize">'+a.aspect+'</b><span class="tag '+a.label+'">'+a.label+'</span><span class="mut">'+a.score+'</span></div>'+bar(a.score);
+  a.mentions.forEach(function(m){h+='<div class="mut" style="margin-top:6px">“'+esc(m.clause)+'” → '+m.score+'</div>'});h+='</div>'});h+='</div>'}
+ h+='</div><div class="card"><h3>Clauses</h3>';
+ r.clauses.forEach(function(c){var col=c.score>=.25?"var(--pos)":c.score<=-.25?"var(--neg)":"var(--neu)";
+  h+='<div class="cl" style="border-left-color:'+col+'">'+esc(c.text)+' <span class="mut">['+(c.aspects.join(", ")||"no aspect")+' · '+c.score+']</span></div>'});
+ $("out").innerHTML=h+'</div>';
+ var t='<div class="mut">latency '+r.trace.latency_ms+' ms</div><h3 style="margin-top:12px">Tokens</h3>';
+ r.trace.tokens.forEach(function(x){t+='<span class="tok">'+esc(x)+'</span>'});
+ t+='<h3 style="margin-top:12px">Lexicon hits</h3>';
+ r.trace.lexicon_hits.forEach(function(x){t+='<span class="tok" style="color:'+(x.score>=0?"var(--pos)":"var(--neg)")+'">'+esc(x.word)+(x.negated?" (neg)":"")+' '+x.score+'</span>'});
+ $("trace").innerHTML=t}
+function run(){var text=$("txt").value.trim();if(!text){$("msg").textContent="Type something first";return}
+ $("msg").textContent="Analyzing…";
+ fetch("/api/analyze",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({text:text,engine:$("eng").value})})
+ .then(function(r){return r.json()}).then(function(d){$("msg").textContent="";if(d.error){$("msg").textContent=d.error;return}render(d)})
+ .catch(function(e){$("msg").textContent="Request failed: "+e})}
+$("go").onclick=run;$("clr").onclick=function(){$("txt").value="";$("out").innerHTML="";$("trace").textContent="-"};
+$("txt").addEventListener("keydown",function(e){if(e.key==="Enter"&&(e.ctrlKey||e.metaKey))run()});
+</script></body></html>

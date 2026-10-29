@@ -1,0 +1,422 @@
+[
+ {
+  "lang": "en",
+  "text": "The food was delicious but the service was very slow.",
+  "overall": "neutral",
+  "aspects": {
+   "quality": "positive",
+   "service": "negative"
+  }
+ },
+ {
+  "lang": "en",
+  "text": "Great battery life and a beautiful display, totally worth the price.",
+  "overall": "positive",
+  "aspects": {
+   "performance": "positive",
+   "design": "positive",
+   "price": "positive"
+  }
+ },
+ {
+  "lang": "en",
+  "text": "Delivery was late and the packaging was damaged. Very disappointed.",
+  "overall": "negative",
+  "aspects": {
+   "delivery": "negative"
+  }
+ },
+ {
+  "lang": "en",
+  "text": "The phone is okay, nothing special.",
+  "overall": "neutral",
+  "aspects": {}
+ },
+ {
+  "lang": "en",
+  "text": "Customer support was rude and unhelpful.",
+  "overall": "negative",
+  "aspects": {
+   "service": "negative"
+  }
+ },
+ {
+  "lang": "en",
+  "text": "Not bad for the price.",
+  "overall": "positive",
+  "aspects": {
+   "price": "positive"
+  }
+ },
+ {
+  "lang": "en",
+  "text": "Build quality is excellent but it is quite expensive.",
+  "overall": "neutral",
+  "aspects": {
+   "quality": "positive",
+   "price": "negative"
+  }
+ },
+ {
+  "lang": "en",
+  "text": "The app keeps crashing and the interface looks ugly.",
+  "overall": "negative",
+  "aspects": {
+   "performance": "negative",
+   "design": "negative"
+  }
+ },
+ {
+  "lang": "en",
+  "text": "Fast delivery and friendly staff, will order again!",
+  "overall": "positive",
+  "aspects": {
+   "delivery": "positive",
+   "service": "positive"
+  }
+ },
+ {
+  "lang": "en",
+  "text": "I love the color and the size is perfect.",
+  "overall": "positive",
+  "aspects": {
+   "design": "positive"
+  }
+ },
+ {
+  "lang": "en",
+  "text": "The product arrived on time but stopped working after two days.",
+  "overall": "negative",
+  "aspects": {
+   "delivery": "positive",
+   "performance": "negative"
+  }
+ },
+ {
+  "lang": "en",
+  "text": "Total waste of money. Never buying again.",
+  "overall": "negative",
+  "aspects": {
+   "price": "negative"
+  }
+ },
+ {
+  "lang": "hinglish",
+  "text": "Khana bahut tasty tha lekin service ekdum bekar thi",
+  "overall": "neutral",
+  "aspects": {
+   "quality": "positive",
+   "service": "negative"
+  }
+ },
+ {
+  "lang": "hinglish",
+  "text": "Delivery time pe aayi aur packaging bhi badhiya hai",
+  "overall": "positive",
+  "aspects": {
+   "delivery": "positive"
+  }
+ },
+ {
+  "lang": "hinglish",
+  "text": "Paisa vasool product hai, quality mast hai",
+  "overall": "positive",
+  "aspects": {
+   "price": "positive",
+   "quality": "positive"
+  }
+ },
+ {
+  "lang": "hinglish",
+  "text": "Bahut mehnga hai aur quality bhi achhi nahi",
+  "overall": "negative",
+  "aspects": {
+   "price": "negative",
+   "quality": "negative"
+  }
+ },
+ {
+  "lang": "hinglish",
+  "text": "Camera achha hai but battery bakwas hai",
+  "overall": "neutral",
+  "aspects": {
+   "performance": "mixed"
+  }
+ },
+ {
+  "lang": "hinglish",
+  "text": "Staff ka behaviour bahut accha tha",
+  "overall": "positive",
+  "aspects": {
+   "service": "positive"
+  }
+ },
+ {
+  "lang": "hinglish",
+  "text": "Delivery boy bahut late aaya, bilkul bekar experience",
+  "overall": "negative",
+  "aspects": {
+   "delivery": "negative"
+  }
+ },
+ {
+  "lang": "hinglish",
+  "text": "Design mast hai par speed thodi slow hai",
+  "overall": "neutral",
+  "aspects": {
+   "design": "positive",
+   "performance": "negative"
+  }
+ },
+ {
+  "lang": "hinglish",
+  "text": "Ye phone ekdum ghatiya nikla, paisa barbaad",
+  "overall": "negative",
+  "aspects": {
+   "price": "negative"
+  }
+ },
+ {
+  "lang": "hinglish",
+  "text": "Sab kuch theek tha, kuch khaas nahi",
+  "overall": "neutral",
+  "aspects": {}
+ },
+ {
+  "lang": "hinglish",
+  "text": "Customer care ne turant help ki, great service!",
+  "overall": "positive",
+  "aspects": {
+   "service": "positive"
+  }
+ },
+ {
+  "lang": "hinglish",
+  "text": "Packaging kharab thi aur delivery bhi der se hui",
+  "overall": "negative",
+  "aspects": {
+   "delivery": "negative"
+  }
+ },
+ {
+  "lang": "hinglish",
+  "text": "Jevan khup chhan hota pan service khup slow hoti",
+  "overall": "neutral",
+  "aspects": {
+   "quality": "positive",
+   "service": "negative"
+  }
+ },
+ {
+  "lang": "hinglish",
+  "text": "Delivery vel var aali ani packing chhan hoti",
+  "overall": "positive",
+  "aspects": {
+   "delivery": "positive"
+  }
+ },
+ {
+  "lang": "hinglish",
+  "text": "Kimmat khup jast aahe, paise vaya gele",
+  "overall": "negative",
+  "aspects": {
+   "price": "negative"
+  }
+ },
+ {
+  "lang": "hi",
+  "text": "खाना बहुत स्वादिष्ट था लेकिन सर्विस बहुत धीमी थी",
+  "overall": "neutral",
+  "aspects": {
+   "quality": "positive",
+   "service": "negative"
+  }
+ },
+ {
+  "lang": "hi",
+  "text": "डिलीवरी समय पर हुई और पैकिंग भी बढ़िया थी",
+  "overall": "positive",
+  "aspects": {
+   "delivery": "positive"
+  }
+ },
+ {
+  "lang": "hi",
+  "text": "कीमत बहुत महंगी है, पैसा वसूल नहीं हुआ",
+  "overall": "negative",
+  "aspects": {
+   "price": "negative"
+  }
+ },
+ {
+  "lang": "hi",
+  "text": "कैमरा बेहतरीन है पर बैटरी बेकार है",
+  "overall": "neutral",
+  "aspects": {
+   "performance": "mixed"
+  }
+ },
+ {
+  "lang": "hi",
+  "text": "स्टाफ का व्यवहार बहुत अच्छा था",
+  "overall": "positive",
+  "aspects": {
+   "service": "positive"
+  }
+ },
+ {
+  "lang": "hi",
+  "text": "प्रोडक्ट घटिया निकला और डिलीवरी भी देर से आई",
+  "overall": "negative",
+  "aspects": {
+   "quality": "negative",
+   "delivery": "negative"
+  }
+ },
+ {
+  "lang": "hi",
+  "text": "डिज़ाइन शानदार है और रंग भी सुंदर है",
+  "overall": "positive",
+  "aspects": {
+   "design": "positive"
+  }
+ },
+ {
+  "lang": "hi",
+  "text": "ऐप बार-बार क्रैश होता है, बहुत परेशान हूँ",
+  "overall": "negative",
+  "aspects": {
+   "performance": "negative"
+  }
+ },
+ {
+  "lang": "hi",
+  "text": "सब ठीक है, कोई खास बात नहीं",
+  "overall": "neutral",
+  "aspects": {}
+ },
+ {
+  "lang": "hi",
+  "text": "बहुत सस्ता और अच्छा सामान",
+  "overall": "positive",
+  "aspects": {
+   "price": "positive",
+   "quality": "positive"
+  }
+ },
+ {
+  "lang": "hi",
+  "text": "ग्राहक सेवा ने तुरंत मदद की, शुक्रिया",
+  "overall": "positive",
+  "aspects": {
+   "service": "positive"
+  }
+ },
+ {
+  "lang": "hi",
+  "text": "पैकिंग खराब थी और सामान टूटा हुआ मिला",
+  "overall": "negative",
+  "aspects": {
+   "delivery": "negative",
+   "quality": "negative"
+  }
+ },
+ {
+  "lang": "mr",
+  "text": "जेवण खूप छान होतं पण सेवा खूप संथ होती",
+  "overall": "neutral",
+  "aspects": {
+   "quality": "positive",
+   "service": "negative"
+  }
+ },
+ {
+  "lang": "mr",
+  "text": "डिलिव्हरी वेळेवर आली आणि पॅकिंग छान होतं",
+  "overall": "positive",
+  "aspects": {
+   "delivery": "positive"
+  }
+ },
+ {
+  "lang": "mr",
+  "text": "किंमत खूप जास्त आहे, पैसे वाया गेले",
+  "overall": "negative",
+  "aspects": {
+   "price": "negative"
+  }
+ },
+ {
+  "lang": "mr",
+  "text": "कॅमेरा उत्तम आहे पण बॅटरी वाईट आहे",
+  "overall": "neutral",
+  "aspects": {
+   "performance": "mixed"
+  }
+ },
+ {
+  "lang": "mr",
+  "text": "कर्मचाऱ्यांचे वागणे खूप चांगले होते",
+  "overall": "positive",
+  "aspects": {
+   "service": "positive"
+  }
+ },
+ {
+  "lang": "mr",
+  "text": "वस्तू खराब निघाली आणि डिलिव्हरी उशिरा आली",
+  "overall": "negative",
+  "aspects": {
+   "quality": "negative",
+   "delivery": "negative"
+  }
+ },
+ {
+  "lang": "mr",
+  "text": "डिझाइन सुंदर आहे आणि रंग पण छान आहे",
+  "overall": "positive",
+  "aspects": {
+   "design": "positive"
+  }
+ },
+ {
+  "lang": "mr",
+  "text": "ॲप सारखा क्रॅश होतो, खूप त्रास झाला",
+  "overall": "negative",
+  "aspects": {
+   "performance": "negative"
+  }
+ },
+ {
+  "lang": "mr",
+  "text": "सगळं ठीक आहे, खास काही नाही",
+  "overall": "neutral",
+  "aspects": {}
+ },
+ {
+  "lang": "mr",
+  "text": "स्वस्त आणि चांगली वस्तू",
+  "overall": "positive",
+  "aspects": {
+   "price": "positive",
+   "quality": "positive"
+  }
+ },
+ {
+  "lang": "mr",
+  "text": "ग्राहक सेवा खूप मदतगार होती",
+  "overall": "positive",
+  "aspects": {
+   "service": "positive"
+  }
+ },
+ {
+  "lang": "mr",
+  "text": "पॅकिंग वाईट होतं आणि वस्तू तुटलेली मिळाली",
+  "overall": "negative",
+  "aspects": {
+   "delivery": "negative",
+   "quality": "negative"
+  }
+ }
+]

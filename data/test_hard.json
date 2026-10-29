@@ -1,0 +1,196 @@
+[
+ {
+  "lang": "en",
+  "text": "The pasta was bland and overcooked, though the waiter was very courteous.",
+  "overall": "neutral",
+  "aspects": {
+   "quality": "negative",
+   "service": "positive"
+  }
+ },
+ {
+  "lang": "en",
+  "text": "Shipping took forever but the box arrived intact.",
+  "overall": "neutral",
+  "aspects": {
+   "delivery": "mixed"
+  }
+ },
+ {
+  "lang": "en",
+  "text": "Honestly the screen is gorgeous and the speakers are crisp.",
+  "overall": "positive",
+  "aspects": {
+   "design": "positive",
+   "performance": "positive"
+  }
+ },
+ {
+  "lang": "en",
+  "text": "I wouldn't recommend this to anyone.",
+  "overall": "negative",
+  "aspects": {}
+ },
+ {
+  "lang": "en",
+  "text": "Oh great, another app update that broke everything.",
+  "overall": "negative",
+  "aspects": {
+   "performance": "negative"
+  }
+ },
+ {
+  "lang": "en",
+  "text": "Service was fine, nothing to complain about.",
+  "overall": "neutral",
+  "aspects": {
+   "service": "neutral"
+  }
+ },
+ {
+  "lang": "en",
+  "text": "Overpriced for what you get, but the staff made up for it with their warmth.",
+  "overall": "neutral",
+  "aspects": {
+   "price": "negative",
+   "service": "positive"
+  }
+ },
+ {
+  "lang": "en",
+  "text": "The jacket feels premium and the stitching is solid.",
+  "overall": "positive",
+  "aspects": {
+   "quality": "positive"
+  }
+ },
+ {
+  "lang": "hinglish",
+  "text": "Pizza ekdum fresh tha par delivery boy ka attitude kharab tha",
+  "overall": "neutral",
+  "aspects": {
+   "quality": "positive",
+   "service": "negative"
+  }
+ },
+ {
+  "lang": "hinglish",
+  "text": "Mobile hang bahut karta hai, battery bhi jaldi khatam ho jaati hai",
+  "overall": "negative",
+  "aspects": {
+   "performance": "negative"
+  }
+ },
+ {
+  "lang": "hinglish",
+  "text": "Value for money hai, bilkul recommend karunga",
+  "overall": "positive",
+  "aspects": {
+   "price": "positive"
+  }
+ },
+ {
+  "lang": "hinglish",
+  "text": "Itna paisa dene ke baad bhi ye haal, sharam aani chahiye",
+  "overall": "negative",
+  "aspects": {}
+ },
+ {
+  "lang": "hinglish",
+  "text": "Seller ne galat product bheja aur refund bhi nahi diya",
+  "overall": "negative",
+  "aspects": {
+   "service": "negative"
+  }
+ },
+ {
+  "lang": "hinglish",
+  "text": "Thoda mehnga zaroor hai lekin kaam ekdum mast karta hai",
+  "overall": "neutral",
+  "aspects": {
+   "price": "negative"
+  }
+ },
+ {
+  "lang": "hi",
+  "text": "सर्विस तो ठीक थी पर खाना ठंडा और बेस्वाद था",
+  "overall": "negative",
+  "aspects": {
+   "service": "neutral",
+   "quality": "negative"
+  }
+ },
+ {
+  "lang": "hi",
+  "text": "बैटरी शानदार चलती है और कैमरा भी लाजवाब है",
+  "overall": "positive",
+  "aspects": {
+   "performance": "positive"
+  }
+ },
+ {
+  "lang": "hi",
+  "text": "डिलीवरी में चार दिन लग गए, बहुत निराशा हुई",
+  "overall": "negative",
+  "aspects": {
+   "delivery": "negative"
+  }
+ },
+ {
+  "lang": "hi",
+  "text": "कपड़े की क्वालिटी उम्मीद से बेहतर निकली",
+  "overall": "positive",
+  "aspects": {
+   "quality": "positive"
+  }
+ },
+ {
+  "lang": "hi",
+  "text": "स्टाफ ने कोई मदद नहीं की",
+  "overall": "negative",
+  "aspects": {
+   "service": "negative"
+  }
+ },
+ {
+  "lang": "mr",
+  "text": "जेवण थंड आणि बेचव होतं",
+  "overall": "negative",
+  "aspects": {
+   "quality": "negative"
+  }
+ },
+ {
+  "lang": "mr",
+  "text": "ॲपचा वेग खूप चांगला आहे",
+  "overall": "positive",
+  "aspects": {
+   "performance": "positive"
+  }
+ },
+ {
+  "lang": "mr",
+  "text": "किंमत थोडी जास्त आहे पण दर्जा उत्कृष्ट आहे",
+  "overall": "neutral",
+  "aspects": {
+   "price": "negative",
+   "quality": "positive"
+  }
+ },
+ {
+  "lang": "mr",
+  "text": "बॅटरी लवकर संपते, अजिबात आवडलं नाही",
+  "overall": "negative",
+  "aspects": {
+   "performance": "negative"
+  }
+ },
+ {
+  "lang": "mr",
+  "text": "सेवा ठीकठाक होती",
+  "overall": "neutral",
+  "aspects": {
+   "service": "neutral"
+  }
+ }
+]
